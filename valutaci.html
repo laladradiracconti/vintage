@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valutaci</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --red: #e25845;
+  --paper: #fff1c9;
+  --cream: #f6e8bf;
+  --cacao: #5a4034;
+  --brown: #5b3b2e;
+  --aqua: #65c9c5;
+  --line: rgba(90,64,52,.22);
+  --head: "Cormorant Garamond", Georgia, serif;
+  --body: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--red); }
+body {
+  min-height: 100svh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background:
+    linear-gradient(90deg, rgba(90,64,52,.14) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(90,64,52,.1) 1px, transparent 1px),
+    var(--red);
+  background-size: 38px 38px, 38px 38px, auto;
+  color: var(--cacao);
+  font-family: var(--body);
+}
+button, a { font: inherit; }
+.page {
+  width: min(100%, 1040px);
+  min-height: min(820px, calc(100svh - 2rem));
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(320px, .62fr);
+  border: 1px solid rgba(90,64,52,.28);
+  background:
+    linear-gradient(180deg, transparent 0 64%, var(--aqua) 64% 73%, var(--brown) 73% 100%),
+    var(--paper);
+  box-shadow: 28px 28px 0 rgba(90,64,52,.16);
+  overflow: hidden;
+}
+.content {
+  display: grid;
+  align-content: center;
+  gap: clamp(1.4rem, 4vw, 2.4rem);
+  padding: clamp(1.25rem, 5vw, 4.4rem);
+}
+.brand {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(1.1rem, 3vw, 1.65rem);
+  font-weight: 700;
+  line-height: .95;
+}
+.question {
+  margin: 0;
+  max-width: 11ch;
+  font-family: var(--head);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: .78;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  overflow-wrap: anywhere;
+}
+.question::first-letter { color: var(--red); }
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  padding-top: .4rem;
+}
+.star {
+  width: clamp(48px, 8vw, 74px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cacao);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cacao);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.star svg { width: 58%; height: 58%; display: block; fill: none; stroke: currentColor; stroke-width: 1.45; }
+.star:hover,
+.star.is-active {
+  background: var(--cacao);
+  color: var(--paper);
+  transform: translateY(-3px) rotate(-2deg);
+}
+.star.is-low.is-active,
+.stars.is-low .star.is-hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--paper);
+}
+.panel {
+  display: none;
+  gap: 1rem;
+  align-items: start;
+  max-width: 600px;
+  padding: 1rem;
+  border-left: 8px solid var(--red);
+  background: rgba(255,248,226,.82);
+}
+.panel.is-visible { display: grid; }
+.panel p { margin: 0; font-size: 1rem; line-height: 1.65; color: rgba(90,64,52,.86); }
+.cta {
+  width: fit-content;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 1.15rem;
+  border: 1px solid var(--cacao);
+  border-radius: 999px;
+  background: var(--cacao);
+  color: var(--paper);
+  font-weight: 800;
+  text-decoration: none;
+}
+.note {
+  margin: 0;
+  max-width: 42ch;
+  color: rgba(255,241,201,.78);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+.visual {
+  min-height: 100%;
+  display: grid;
+  align-content: space-between;
+  padding: clamp(1.25rem, 4vw, 2.2rem);
+  background: var(--brown);
+  color: var(--paper);
+}
+.image-wrap {
+  aspect-ratio: 1 / .86;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,241,201,.18);
+  background: var(--cream);
+  overflow: hidden;
+}
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.info {
+  display: grid;
+  gap: .65rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,241,201,.2);
+}
+.info p { margin: 0; color: rgba(255,241,201,.76); font-size: .9rem; line-height: 1.5; }
+.info a { color: var(--paper); text-decoration-color: var(--aqua); text-underline-offset: 4px; }
+.is-hidden { display: none !important; }
+@media (max-width: 760px) {
+  body { padding: .7rem; }
+  .page {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    box-shadow: none;
+    background: var(--paper);
+  }
+  .content { padding: 1.15rem; }
+  .question { max-width: 100%; font-size: clamp(2.65rem, 17vw, 4.9rem); line-height: .82; }
+  .visual { min-height: auto; }
+  .image-wrap { aspect-ratio: 1.45 / 1; }
+  .cta { width: 100%; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="content" aria-labelledby="question">
+    <p class="brand" id="brand"></p>
+    <h1 class="question" id="question"></h1>
+    <div class="stars" id="stars" role="group" aria-label="Seleziona un punteggio da 1 a 5"></div>
+    <div class="panel" id="response" aria-live="polite" aria-atomic="true">
+      <p id="response-text"></p>
+      <a class="cta" id="response-cta" href="#"></a>
+      <p class="note" id="response-note"></p>
+    </div>
+  </section>
+  <aside class="visual" aria-label="Informazioni">
+    <figure class="image-wrap">
+      <img id="visual" alt="">
+    </figure>
+    <div class="info">
+      <p id="hours"></p>
+      <p><a id="contact-link" href="#"></a></p>
+    </div>
+  </aside>
+</main>
+<script>
+const LOCAL_CONFIG_KEY = "ompage_local_config";
+
+const clean = (value) => String(value || "").trim();
+const isYes = (value) => String(value || "").toUpperCase() === "SI";
+
+async function loadConfig() {
+  try {
+    const preview = new URLSearchParams(location.search).has("preview");
+    if (preview) {
+      const local = localStorage.getItem(LOCAL_CONFIG_KEY);
+      if (local) return JSON.parse(local);
+    }
+  } catch (error) {}
+
+  try {
+    const res = await fetch("config.json?ts=" + Date.now());
+    if (res.ok) return await res.json();
+  } catch (error) {}
+
+  return {};
+}
+
+function phoneDigits(value) {
+  return clean(value).replace(/\D/g, "");
+}
+
+function whatsappUrl(value, text) {
+  const digits = phoneDigits(value);
+  return digits ? "https://wa.me/" + digits + "?text=" + encodeURIComponent(text || "") : "";
+}
+
+function emailUrl(value, subject, body) {
+  const email = clean(value);
+  if (!email) return "";
+  return "mailto:" + email + "?subject=" + encodeURIComponent(subject || "") + "&body=" + encodeURIComponent(body || "");
+}
+
+function buildPrivateHref(cfg) {
+  const brand = clean(cfg.schema_nome) || clean(cfg.footer_nome) || clean(cfg.navbar_logo_testo);
+  const message = brand
+    ? "Ciao " + brand + ", vorrei lasciare un feedback sulla mia visita."
+    : "Ciao, vorrei lasciare un feedback sulla mia visita.";
+  const type = clean(cfg.valutaci_cta_insoddisfatto_tipo || cfg.footer_cta_tipo).toUpperCase();
+  if (type === "EMAIL") return emailUrl(cfg.footer_email, "Feedback visita", message);
+  return whatsappUrl(cfg.footer_whatsapp || cfg.footer_telefono, message);
+}
+
+function setLink(el, href) {
+  el.href = href || "#";
+  if (href && !href.startsWith("mailto:") && !href.startsWith("tel:")) {
+    el.target = "_blank";
+    el.rel = "noopener noreferrer";
+  } else {
+    el.removeAttribute("target");
+    el.removeAttribute("rel");
+  }
+}
+
+function starSvg() {
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.75 5.58 6.16.9-4.46 4.35 1.05 6.14L12 16.68l-5.5 2.89 1.05-6.14-4.46-4.35 6.16-.9z"/></svg>';
+}
+
+function buildStars(container, onSelect) {
+  for (let i = 1; i <= 5; i++) {
+    const button = document.createElement("button");
+    button.className = "star";
+    button.type = "button";
+    button.dataset.value = String(i);
+    button.setAttribute("aria-label", i + (i === 1 ? " stella" : " stelle"));
+    button.innerHTML = starSvg();
+    button.addEventListener("mouseenter", () => {
+      const low = i <= 3;
+      container.classList.toggle("is-low", low);
+      [...container.children].forEach((item, index) => item.classList.toggle("is-hover", index < i));
+    });
+    button.addEventListener("mouseleave", () => {
+      container.classList.remove("is-low");
+      [...container.children].forEach((item) => item.classList.remove("is-hover"));
+    });
+    button.addEventListener("click", () => onSelect(i));
+    container.append(button);
+  }
+}
+
+function showResponse(cfg, rating) {
+  const response = document.getElementById("response");
+  const text = document.getElementById("response-text");
+  const cta = document.getElementById("response-cta");
+  const note = document.getElementById("response-note");
+  const stars = [...document.getElementById("stars").children];
+
+  stars.forEach((star, index) => {
+    star.classList.toggle("is-active", index < rating);
+    star.classList.toggle("is-low", rating <= 3);
+    star.disabled = true;
+  });
+
+  if (rating <= 3) {
+    text.textContent = clean(cfg.valutaci_testo_insoddisfatto);
+    cta.textContent = clean(cfg.valutaci_cta_insoddisfatto_testo);
+    setLink(cta, buildPrivateHref(cfg));
+    note.textContent = "";
+    note.classList.add("is-hidden");
+  } else {
+    text.textContent = clean(cfg.valutaci_testo_soddisfatto);
+    cta.textContent = clean(cfg.valutaci_cta_soddisfatto_testo);
+    setLink(cta, clean(cfg.link_recensioni_google));
+    note.textContent = clean(cfg.valutaci_nota_soddisfatto);
+    note.classList.toggle("is-hidden", !note.textContent);
+  }
+
+  cta.classList.toggle("is-hidden", !clean(cta.textContent));
+  response.classList.add("is-visible");
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const cfg = await loadConfig();
+  const brand = clean(cfg.schema_nome) || clean(cfg.footer_nome) || clean(cfg.navbar_logo_testo);
+  document.title = brand ? brand + " | Valutaci" : "Valutaci";
+  document.getElementById("brand").textContent = brand;
+  document.getElementById("question").textContent = clean(cfg.valutaci_domanda);
+
+  const visual = document.getElementById("visual");
+  const image = clean(cfg.hero_foto) || clean(cfg.og_immagine) || clean(cfg.chi_siamo_foto);
+  visual.src = image;
+  visual.alt = brand;
+  visual.parentElement.classList.toggle("is-hidden", !image);
+
+  document.getElementById("hours").textContent = clean(cfg.footer_orari || cfg.schema_orari);
+  const contact = document.getElementById("contact-link");
+  const contactText = clean(cfg.footer_whatsapp) || clean(cfg.footer_telefono) || clean(cfg.footer_email);
+  contact.textContent = contactText;
+  if (clean(cfg.footer_whatsapp)) setLink(contact, whatsappUrl(cfg.footer_whatsapp, ""));
+  else if (clean(cfg.footer_telefono)) setLink(contact, "tel:" + phoneDigits(cfg.footer_telefono));
+  else setLink(contact, emailUrl(cfg.footer_email, "", ""));
+  contact.parentElement.classList.toggle("is-hidden", !contactText);
+
+  buildStars(document.getElementById("stars"), (rating) => showResponse(cfg, rating));
+});
+</script>
+</body>
+</html>
