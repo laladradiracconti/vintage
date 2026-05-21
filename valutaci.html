@@ -38,22 +38,17 @@ body {
 }
 button, a { font: inherit; }
 .page {
-  width: min(100%, 1040px);
-  min-height: min(820px, calc(100svh - 2rem));
-  display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(320px, .62fr);
+  width: min(100%, 600px);
   border: 1px solid rgba(90,64,52,.28);
-  background:
-    linear-gradient(180deg, transparent 0 64%, var(--aqua) 64% 73%, var(--brown) 73% 100%),
-    var(--paper);
-  box-shadow: 28px 28px 0 rgba(90,64,52,.16);
+  background: var(--paper);
+  box-shadow: 20px 20px 0 rgba(90,64,52,.16);
   overflow: hidden;
 }
 .content {
   display: grid;
   align-content: center;
   gap: clamp(1.4rem, 4vw, 2.4rem);
-  padding: clamp(1.25rem, 5vw, 4.4rem);
+  padding: clamp(2rem, 6vw, 3.8rem);
 }
 .brand {
   margin: 0;
@@ -64,14 +59,12 @@ button, a { font: inherit; }
 }
 .question {
   margin: 0;
-  max-width: 11ch;
   font-family: var(--head);
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
   font-weight: 700;
-  line-height: .78;
-  letter-spacing: 0;
-  text-transform: lowercase;
-  overflow-wrap: anywhere;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  
 }
 .question::first-letter { color: var(--red); }
 .stars {
@@ -93,11 +86,17 @@ button, a { font: inherit; }
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
 .star svg { width: 58%; height: 58%; display: block; fill: none; stroke: currentColor; stroke-width: 1.45; }
+.star.is-hover,
 .star:hover,
 .star.is-active {
   background: var(--cacao);
   color: var(--paper);
   transform: translateY(-3px) rotate(-2deg);
+}
+.star.is-hover svg,
+.star:hover svg,
+.star.is-active svg {
+  fill: currentColor;
 }
 .star.is-low.is-active,
 .stars.is-low .star.is-hover {
@@ -133,54 +132,18 @@ button, a { font: inherit; }
 .note {
   margin: 0;
   max-width: 42ch;
-  color: rgba(255,241,201,.78);
+  color: rgba(90,64,52,.7);
   font-size: .88rem;
   line-height: 1.55;
 }
-.visual {
-  min-height: 100%;
-  display: grid;
-  align-content: space-between;
-  padding: clamp(1.25rem, 4vw, 2.2rem);
-  background: var(--brown);
-  color: var(--paper);
-}
-.image-wrap {
-  aspect-ratio: 1 / .86;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255,241,201,.18);
-  background: var(--cream);
-  overflow: hidden;
-}
-.image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-.info {
-  display: grid;
-  gap: .65rem;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,241,201,.2);
-}
-.info p { margin: 0; color: rgba(255,241,201,.76); font-size: .9rem; line-height: 1.5; }
-.info a { color: var(--paper); text-decoration-color: var(--aqua); text-underline-offset: 4px; }
 .is-hidden { display: none !important; }
 @media (max-width: 760px) {
   body { padding: .7rem; }
   .page {
-    min-height: auto;
-    grid-template-columns: 1fr;
     box-shadow: none;
-    background: var(--paper);
   }
-  .content { padding: 1.15rem; }
-  .question { max-width: 100%; font-size: clamp(2.65rem, 17vw, 4.9rem); line-height: .82; }
-  .visual { min-height: auto; }
-  .image-wrap { aspect-ratio: 1.45 / 1; }
+  .content { padding: 1.5rem 1.15rem; }
+  .question { font-size: clamp(1.8rem, 8vw, 2.5rem); line-height: 1.15; }
   .cta { width: 100%; }
 }
 </style>
@@ -197,15 +160,6 @@ button, a { font: inherit; }
       <p class="note" id="response-note"></p>
     </div>
   </section>
-  <aside class="visual" aria-label="Informazioni">
-    <figure class="image-wrap">
-      <img id="visual" alt="">
-    </figure>
-    <div class="info">
-      <p id="hours"></p>
-      <p><a id="contact-link" href="#"></a></p>
-    </div>
-  </aside>
 </main>
 <script>
 const LOCAL_CONFIG_KEY = "ompage_local_config";
@@ -267,7 +221,7 @@ function setLink(el, href) {
 }
 
 function starSvg() {
-  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.75 5.58 6.16.9-4.46 4.35 1.05 6.14L12 16.68l-5.5 2.89 1.05-6.14-4.46-4.35 6.16-.9z"/></svg>';
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.75 5.58 6.16 0.9-4.46 4.35 1.05 6.14L12 16.68l-5.5 2.89 1.05-6.14-4.46-4.35 6.16-0.9z"/></svg>';
 }
 
 function buildStars(container, onSelect) {
@@ -329,21 +283,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.title = brand ? brand + " | Valutaci" : "Valutaci";
   document.getElementById("brand").textContent = brand;
   document.getElementById("question").textContent = clean(cfg.valutaci_domanda);
-
-  const visual = document.getElementById("visual");
-  const image = clean(cfg.hero_foto) || clean(cfg.og_immagine) || clean(cfg.chi_siamo_foto);
-  visual.src = image;
-  visual.alt = brand;
-  visual.parentElement.classList.toggle("is-hidden", !image);
-
-  document.getElementById("hours").textContent = clean(cfg.footer_orari || cfg.schema_orari);
-  const contact = document.getElementById("contact-link");
-  const contactText = clean(cfg.footer_whatsapp) || clean(cfg.footer_telefono) || clean(cfg.footer_email);
-  contact.textContent = contactText;
-  if (clean(cfg.footer_whatsapp)) setLink(contact, whatsappUrl(cfg.footer_whatsapp, ""));
-  else if (clean(cfg.footer_telefono)) setLink(contact, "tel:" + phoneDigits(cfg.footer_telefono));
-  else setLink(contact, emailUrl(cfg.footer_email, "", ""));
-  contact.parentElement.classList.toggle("is-hidden", !contactText);
 
   buildStars(document.getElementById("stars"), (rating) => showResponse(cfg, rating));
 });
