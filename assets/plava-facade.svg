@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-label="Cafe facade">
+  <rect width="1400" height="1000" fill="#f7eadf"/>
+  <rect y="0" width="1400" height="260" fill="#fff7ef"/>
+  <rect x="150" y="170" width="1100" height="600" rx="8" fill="#172f42"/>
+  <rect x="205" y="270" width="400" height="440" rx="8" fill="#fffdf8"/>
+  <rect x="795" y="270" width="350" height="440" rx="8" fill="#fffdf8"/>
+  <rect x="640" y="270" width="120" height="440" rx="8" fill="#e13223"/>
+  <rect x="150" y="170" width="1100" height="96" fill="#e13223"/>
+  <circle cx="700" cy="500" r="34" fill="#f6d56d"/>
+  <rect y="770" width="1400" height="230" fill="#69d2b8"/>
+  <ellipse cx="360" cy="790" rx="170" ry="42" fill="#18130f" opacity=".18"/>
+  <ellipse cx="980" cy="790" rx="170" ry="42" fill="#18130f" opacity=".18"/>
+</svg>

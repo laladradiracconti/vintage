@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1200" role="img" aria-label="Warm cafe interior">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#172f42"/><stop offset=".58" stop-color="#2d5664"/><stop offset="1" stop-color="#fff7ef"/></linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency=".7" numOctaves="3"/><feComponentTransfer><feFuncA type="table" tableValues="0 .07"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1400" height="1200" fill="url(#bg)"/>
+  <rect width="1400" height="1200" filter="url(#grain)"/>
+  <rect x="120" y="160" width="1160" height="640" rx="8" fill="#fff7ef"/>
+  <rect x="150" y="190" width="1100" height="580" rx="4" fill="#172f42"/>
+  <g fill="#f6d56d">
+    <circle cx="316" cy="295" r="66"/><circle cx="700" cy="295" r="66"/><circle cx="1084" cy="295" r="66"/>
+  </g>
+  <g fill="#fffdf8" opacity=".92">
+    <rect x="236" y="440" width="180" height="250" rx="8"/>
+    <rect x="610" y="440" width="180" height="250" rx="8"/>
+    <rect x="984" y="440" width="180" height="250" rx="8"/>
+  </g>
+  <rect x="0" y="790" width="1400" height="220" fill="#e13223"/>
+  <rect x="150" y="760" width="1100" height="80" rx="8" fill="#18130f"/>
+  <ellipse cx="340" cy="900" rx="124" ry="42" fill="#fffdf8"/>
+  <ellipse cx="340" cy="900" rx="82" ry="24" fill="#8d4d31"/>
+  <ellipse cx="700" cy="900" rx="124" ry="42" fill="#fffdf8"/>
+  <rect x="617" y="870" width="166" height="58" rx="29" fill="#69d2b8"/>
+  <ellipse cx="1060" cy="900" rx="124" ry="42" fill="#fffdf8"/>
+  <path d="M980 900c45-48 121-60 171-4-45 50-121 60-171 4z" fill="#f6d56d"/>
+  <rect y="1010" width="1400" height="190" fill="#fff7ef"/>
+</svg>

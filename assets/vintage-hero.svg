@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4cf"/>
+      <stop offset="1" stop-color="#ead39b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".52" cy=".42" r=".64">
+      <stop offset="0" stop-color="#6fd0cb" stop-opacity=".65"/>
+      <stop offset=".55" stop-color="#6fd0cb" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#6fd0cb" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#5a4034" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="760" fill="url(#paper)"/>
+  <circle cx="520" cy="360" r="330" fill="url(#glow)"/>
+  <path d="M120 594c142-34 272-40 390-18 142 27 255 14 370-42v76c-129 56-250 65-391 40-114-21-236-14-369 20z" fill="#63c7c1"/>
+  <g filter="url(#shadow)">
+    <rect x="256" y="188" width="488" height="334" rx="44" fill="#5b3b2e"/>
+    <rect x="286" y="218" width="428" height="238" rx="30" fill="#f6e8bf"/>
+    <rect x="316" y="248" width="368" height="152" rx="22" fill="#d1b57e"/>
+    <g stroke="#5a4034" stroke-width="8" stroke-linecap="round" opacity=".45">
+      <path d="M340 280h320"/>
+      <path d="M340 315h320"/>
+      <path d="M340 350h320"/>
+      <path d="M380 248v150"/>
+      <path d="M448 248v150"/>
+      <path d="M516 248v150"/>
+      <path d="M584 248v150"/>
+    </g>
+    <rect x="336" y="426" width="328" height="54" rx="27" fill="#3c2b25"/>
+    <circle cx="368" cy="453" r="21" fill="#f6e8bf" stroke="#5a4034" stroke-width="8"/>
+    <circle cx="632" cy="453" r="21" fill="#f6e8bf" stroke="#5a4034" stroke-width="8"/>
+    <rect x="418" y="443" width="164" height="20" rx="10" fill="#e25845"/>
+    <path d="M320 522h-34v58h34zM714 522h-34v58h34z" fill="#5b3b2e"/>
+  </g>
+  <g fill="none" stroke="#e25845" stroke-width="5" stroke-linecap="round" opacity=".7">
+    <path d="M158 178c34-28 70-34 108-18"/>
+    <path d="M792 188c34 24 54 55 60 94"/>
+    <path d="M170 502c30 18 60 21 91 10"/>
+  </g>
+</svg>

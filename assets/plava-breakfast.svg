@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 900" role="img" aria-label="Breakfast tray with croissant and coffee">
+  <rect width="1100" height="900" fill="#fff7ef"/>
+  <path d="M0 0h1100v310H0z" fill="#e13223"/>
+  <path d="M0 690h1100v210H0z" fill="#69d2b8"/>
+  <rect x="170" y="180" width="760" height="520" rx="8" fill="#fffdf8" stroke="#18130f" stroke-width="8"/>
+  <ellipse cx="730" cy="366" rx="160" ry="58" fill="#f7eadf"/>
+  <ellipse cx="730" cy="350" rx="110" ry="40" fill="#7b4329"/>
+  <path d="M328 492c90-136 296-144 440-8-105 92-320 118-440 8z" fill="#f6d56d"/>
+  <path d="M352 482c52-34 110-52 174-54M560 428c68 3 124 22 180 59" fill="none" stroke="#c78945" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="314" cy="310" r="44" fill="#69d2b8"/>
+  <circle cx="396" cy="310" r="44" fill="#172f42"/>
+  <circle cx="478" cy="310" r="44" fill="#e13223"/>
+</svg>

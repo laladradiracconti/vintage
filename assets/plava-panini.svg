@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Panini and toast on a counter">
+  <rect width="1200" height="900" fill="#fffdf8"/>
+  <rect y="0" width="1200" height="270" fill="#69d2b8"/>
+  <rect y="650" width="1200" height="250" fill="#172f42"/>
+  <rect x="150" y="250" width="900" height="430" rx="8" fill="#f7eadf" stroke="#18130f" stroke-width="6"/>
+  <g transform="translate(240 330)">
+    <path d="M0 150c50-118 194-168 324-82 50 33 60 83 26 116-87 84-264 82-350-34z" fill="#f6d56d"/>
+    <path d="M38 162c65 42 195 44 276 3" fill="none" stroke="#e13223" stroke-width="28" stroke-linecap="round"/>
+    <path d="M80 135c50-25 108-30 170-13" fill="none" stroke="#fffdf8" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(630 350)">
+    <rect x="0" y="42" width="300" height="170" rx="32" fill="#c78945"/>
+    <rect x="24" y="64" width="252" height="126" rx="20" fill="#f6d56d"/>
+    <path d="M40 126h220" stroke="#e13223" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="95" cy="125" r="18" fill="#69d2b8"/><circle cx="205" cy="125" r="18" fill="#69d2b8"/>
+  </g>
+</svg>

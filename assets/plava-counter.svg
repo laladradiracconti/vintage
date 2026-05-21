@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Cafe counter display">
+  <rect width="1400" height="900" fill="#fff7ef"/>
+  <rect y="0" width="1400" height="210" fill="#e13223"/>
+  <rect x="110" y="190" width="1180" height="430" rx="8" fill="#172f42"/>
+  <rect x="155" y="238" width="1090" height="296" rx="8" fill="#fffdf8" opacity=".92"/>
+  <g fill="#f6d56d">
+    <ellipse cx="310" cy="420" rx="96" ry="48"/><ellipse cx="555" cy="420" rx="96" ry="48"/><ellipse cx="800" cy="420" rx="96" ry="48"/><ellipse cx="1045" cy="420" rx="96" ry="48"/>
+  </g>
+  <g fill="#69d2b8">
+    <rect x="242" y="300" width="136" height="74" rx="37"/><rect x="487" y="300" width="136" height="74" rx="37"/><rect x="732" y="300" width="136" height="74" rx="37"/><rect x="977" y="300" width="136" height="74" rx="37"/>
+  </g>
+  <rect x="0" y="620" width="1400" height="280" fill="#18130f"/>
+  <rect x="130" y="650" width="1140" height="42" rx="21" fill="#f6d56d"/>
+</svg>

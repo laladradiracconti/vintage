@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Aperitivo drinks and small plates">
+  <rect width="1200" height="900" fill="#172f42"/>
+  <path d="M0 0h1200v245H0z" fill="#961d31"/>
+  <path d="M0 680h1200v220H0z" fill="#69d2b8"/>
+  <g transform="translate(230 190)">
+    <path d="M160 55h210l-64 260H224z" fill="#fffdf8"/>
+    <path d="M190 104h150l-42 170h-66z" fill="#e13223"/>
+    <rect x="253" y="310" width="22" height="210" fill="#fffdf8"/>
+    <ellipse cx="264" cy="540" rx="92" ry="24" fill="#fffdf8"/>
+    <circle cx="340" cy="112" r="20" fill="#f6d56d"/>
+  </g>
+  <g transform="translate(610 240)">
+    <ellipse cx="220" cy="260" rx="200" ry="72" fill="#fffdf8"/>
+    <circle cx="150" cy="245" r="46" fill="#f6d56d"/>
+    <circle cx="235" cy="250" r="38" fill="#e13223"/>
+    <circle cx="304" cy="244" r="32" fill="#69d2b8"/>
+    <rect x="130" y="310" width="270" height="24" rx="12" fill="#18130f" opacity=".45"/>
+  </g>
+</svg>

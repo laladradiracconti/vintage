@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Lunch plate with vegetables">
+  <rect width="1200" height="900" fill="#f7eadf"/>
+  <rect x="0" y="0" width="1200" height="170" fill="#172f42"/>
+  <rect x="0" y="730" width="1200" height="170" fill="#e13223"/>
+  <ellipse cx="600" cy="455" rx="360" ry="240" fill="#fffdf8"/>
+  <ellipse cx="600" cy="455" rx="274" ry="174" fill="#f6d56d"/>
+  <path d="M390 448c70-90 160-138 273-126 96 10 156 63 188 142-78 72-164 106-260 101-88-5-154-44-201-117z" fill="#69d2b8"/>
+  <g fill="#e13223">
+    <circle cx="480" cy="410" r="30"/><circle cx="620" cy="380" r="26"/><circle cx="710" cy="470" r="28"/><circle cx="540" cy="520" r="24"/>
+  </g>
+  <g fill="#fffdf8">
+    <circle cx="558" cy="430" r="18"/><circle cx="662" cy="520" r="16"/><circle cx="760" cy="390" r="15"/>
+  </g>
+  <path d="M305 300l160 260M895 300 735 560" stroke="#18130f" stroke-width="16" stroke-linecap="round" opacity=".35"/>
+</svg>
