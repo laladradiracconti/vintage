@@ -1458,7 +1458,7 @@ clear() {
     };
 
     function isHiddenKey(key) {
-      return ADMIN_ONLY_KEYS.has(key) || DERIVED_KEYS.has(key) || key.includes("_placeholder") || /_cta_contatto$/.test(key);
+      return ADMIN_ONLY_KEYS.has(key) || DERIVED_KEYS.has(key) || key.includes("_placeholder") || /_cta_contatto$/.test(key) || /^vantaggio_\d+_attivo$/.test(key);
     }
 
     function isToggle(value) {
